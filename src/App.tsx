@@ -7,7 +7,12 @@ const App = (): JSX.Element => {
     watch,
     reset,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      name: "test",
+      email: "",
+    },
+  });
   const onSubmit = (data: any) => {
     alert(JSON.stringify(data));
   };
