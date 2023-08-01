@@ -5,6 +5,7 @@ const App = (): JSX.Element => {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
   const onSubmit = (data: any) => {
@@ -71,12 +72,20 @@ const App = (): JSX.Element => {
             </span>
           )}
         </div>
-        <button
-          className="border border-solid hover:text-white hover:bg-gray-800 rounded-lg py-1 px-6 border-gray-800"
-          type="submit"
-        >
-          Submit
-        </button>
+        <div className="flex justify-center items-center gap-4">
+          <button
+            className="border border-solid hover:text-white hover:bg-gray-800 rounded-lg py-1 px-6 border-gray-800"
+            type="submit"
+          >
+            Submit
+          </button>
+          <a
+            className="cursor-pointer border border-solid hover:text-white hover:bg-gray-800 rounded-lg py-1 px-6 border-gray-800"
+            onClick={() => reset()}
+          >
+            Reset
+          </a>
+        </div>
       </form>
     </div>
   );
